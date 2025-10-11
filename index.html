@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>كان واصبح ماكان  </title>
+    <title>كان واصبح ماكان</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap');
@@ -22,7 +22,6 @@
             min-height: 100vh;
         }
         
-        /* تأثيرات الخلفية السينمائية */
         .cinematic-bg {
             position: fixed;
             top: 0;
@@ -71,14 +70,13 @@
             100% { opacity: 0.7; }
         }
         
-        /* شاشة البداية التفاعلية */
         .start-screen {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(15, 1, 1, 0.9);
+            background: rgba(15, 1, 1, 0.95);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -97,6 +95,7 @@
             font-size: 3.5rem;
             background: linear-gradient(45deg, #e50f0f, #bd4d8b, #ffd93d);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 30px;
         }
@@ -111,7 +110,7 @@
             font-size: 1.5rem;
             cursor: pointer;
             transition: all 0.3s ease;
-            margin-top: 30px;
+            margin: 10px;
             box-shadow: 0 5px 20px rgba(255, 107, 107, 0.4);
         }
         
@@ -120,13 +119,25 @@
             box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
         }
         
-        .music-notice {
-            margin-top: 20px;
-            font-size: 1.2rem;
-            color: #aaa;
+        .new-page-btn {
+            background: linear-gradient(45deg, #6e78ff, #ff6b6b);
+            border: none;
+            border-radius: 50px;
+            padding: 15px 40px;
+            color: white;
+            font-family: 'El Messiri', sans-serif;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 10px;
+            box-shadow: 0 5px 20px rgba(110, 120, 255, 0.4);
         }
         
-        /* المحتوى الرئيسي */
+        .new-page-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(110, 120, 255, 0.6);
+        }
+        
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -149,11 +160,11 @@
             font-weight: 700;
             background: linear-gradient(45deg, #ff6b6b, #ffa36c, #ffd93d, #6bcf7f, #6e78ff);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
             background-size: 300% 300%;
             animation: gradientShift 8s ease infinite;
             margin-bottom: 20px;
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
         }
         
         @keyframes gradientShift {
@@ -170,13 +181,10 @@
             line-height: 1.6;
         }
         
-        /* قسم القصيدة - بدون خلفية خاصة */
         .poem-section {
             margin: 60px 0;
             opacity: 0;
             animation: fadeInUp 2s ease 0.5s forwards;
-            position: relative;
-            z-index: 1;
         }
         
         .section-title {
@@ -184,67 +192,27 @@
             color: #ffa36c;
             margin-bottom: 40px;
             text-align: center;
-            position: relative;
-            text-shadow: 0 0 10px rgba(255, 163, 108, 0.5);
-        }
-        
-        .section-title::after {
-            content: "";
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 150px;
-            height: 3px;
-            background: linear-gradient(to right, transparent, #ffa36c, transparent);
-            box-shadow: 0 0 10px #ffa36c;
         }
         
         .poem-container {
             display: flex;
             flex-direction: column;
-            gap: 40px;
-            position: relative;
+            gap: 30px;
         }
         
         .verse {
-            font-size: 2rem;
-            line-height: 2;
+            font-size: 1.8rem;
+            line-height: 1.8;
             text-align: center;
-            padding: 30px;
+            padding: 25px;
             border-radius: 15px;
             background: rgba(255, 255, 255, 0.05);
             transition: all 0.5s ease;
             opacity: 0;
             transform: translateY(30px);
             animation: verseAppear 1.5s ease forwards;
-            position: relative;
-            overflow: hidden;
             backdrop-filter: blur(5px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
-        }
-        
-        .verse::before {
-            content: "";
-            position: absolute;
-            top: 15px;
-            right: 25px;
-            font-size: 5rem;
-            color: rgba(255, 255, 255, 0.15);
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-        }
-        
-        .verse::after {
-            content: "";
-            position: absolute;
-            bottom: 15px;
-            left: 25px;
-            font-size: 5rem;
-            color: rgba(255, 255, 255, 0.15);
-            transform: rotate(180deg);
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
         }
         
         .verse:nth-child(1) { animation-delay: 1s; }
@@ -261,23 +229,17 @@
         
         .verse:hover {
             background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
         }
         
-        /* قسم الرسالة الشخصية */
         .message-section {
             background: rgba(20, 20, 40, 0.7);
             backdrop-filter: blur(10px);
             border-radius: 15px;
             padding: 40px;
             margin: 40px 0;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             opacity: 0;
             animation: fadeInUp 2s ease 1s forwards;
-            position: relative;
         }
         
         .message {
@@ -293,11 +255,8 @@
             font-size: 1.4rem;
             color: #ffa36c;
             margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
         
-        /* عناصر التحكم بالموسيقى */
         .music-controls {
             display: flex;
             justify-content: center;
@@ -311,28 +270,21 @@
             background: linear-gradient(45deg, #ff6b6b, #6e78ff);
             border: none;
             border-radius: 50px;
-            padding: 15px 30px;
+            padding: 12px 25px;
             color: white;
             font-family: 'El Messiri', sans-serif;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             cursor: pointer;
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
-            gap: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            gap: 8px;
         }
         
         .control-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
         }
         
-        .control-btn:active {
-            transform: translateY(1px);
-        }
-        
-        /* تأثيرات الرسوم المتحركة */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -349,7 +301,6 @@
             to { opacity: 1; }
         }
         
-        /* التذييل */
         .footer {
             text-align: center;
             margin-top: 60px;
@@ -358,10 +309,8 @@
             font-size: 1.1rem;
             opacity: 0;
             animation: fadeIn 2s ease 3.5s forwards;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
         
-        /* تأثيرات الجسيمات */
         .particles {
             position: fixed;
             top: 0;
@@ -369,7 +318,6 @@
             width: 100%;
             height: 100%;
             z-index: -1;
-            pointer-events: none;
         }
         
         .particle {
@@ -386,62 +334,16 @@
                 transform: translateY(100vh) translateX(0);
                 opacity: 0;
             }
-            10% {
-                opacity: 1;
-            }
-            90% {
-                opacity: 1;
-            }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
             100% {
                 transform: translateY(-100px) translateX(100px);
                 opacity: 0;
             }
         }
         
-        /* تأثيرات خاصة للقصيدة */
-        .poem-particles {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
-        
-        .poem-particle {
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            background: rgba(255, 182, 193, 0.7);
-            border-radius: 50%;
-            animation: poemFloat 10s infinite linear;
-        }
-        
-        @keyframes poemFloat {
-            0% {
-                transform: translateY(100vh) translateX(0);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.7;
-            }
-            90% {
-                opacity: 0.7;
-            }
-            100% {
-                transform: translateY(-100px) translateX(100px);
-                opacity: 0;
-            }
-        }
-        
-        /* التكيف مع الشاشات الصغيرة */
         @media (max-width: 768px) {
-            .title {
-                font-size: 2.5rem;
-            }
-            
-            .start-title {
+            .title, .start-title {
                 font-size: 2.5rem;
             }
             
@@ -450,7 +352,7 @@
             }
             
             .verse {
-                font-size: 1.5rem;
+                font-size: 1.4rem;
                 padding: 20px;
             }
             
@@ -461,105 +363,99 @@
             .section-title {
                 font-size: 2rem;
             }
+            
+            .start-btn, .new-page-btn {
+                padding: 12px 30px;
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- شاشة البداية -->
     <div class="start-screen" id="startScreen">
         <div class="start-content">
-            <h1 class="start-title">كان انعزال مؤقت فجعلتوه دائم  </h1>
-          
-            <p style="font-size: 1.4rem; margin-bottom: 20px; line-height: 1.6;">
-                <br>
-                ما عدتُ أرجو من اللومِ اعتذارًا
-ولا أُداوي بما فاتَ انكسارًا
-أغلقتُ بابي على ماضٍ تعِبتُ به
-فلن نكون كما كنّا نهارًا
+            <h1 class="start-title">كان انعزال مؤقت فجعلتوه دائم</h1>
+            <p style="font-size: 1.4rem; margin-bottom: 30px; line-height: 1.6; color: #ccc;">
+                ما عدتُ أرجو من اللومِ اعتذارًا<br>
+                ولا أُداوي بما فاتَ انكسارًا<br>
+                أغلقتُ بابي على ماضٍ تعِبتُ به<br>
+                فلن نكون كما كنّا نهارًا
             </p>
-            <button class="start-btn" id="startBtn">
-                <i class="fas fa-play-circle"></i>
-                ابدء وحدك
-            </button>
-            <p class="music-notice"></p>
+            <div>
+                <button class="start-btn" id="startBtn">
+                    <i class="fas fa-play-circle"></i>
+                    ابدء وحدك
+                </button>
+                <button class="new-page-btn" id="newPageBtn">
+                    <i class="fas fa-heart"></i>
+                    انها الصفحه الاخيره   
+                </button>
+            </div>
         </div>
     </div>
     
-    <!-- خلفية سينمائية -->
     <div class="cinematic-bg">
         <div class="stars"></div>
         <div class="light-beam"></div>
     </div>
     
-    <!-- تأثير الجسيمات -->
     <div class="particles" id="particles"></div>
     
-    <!-- المحتوى الرئيسي -->
     <div class="container" id="mainContent">
         <header class="header">
-            <h1 class="title">رسالةولعلها الاخيره  </h1>
-            <p class="subtitle">  عارفه إني مش زي الأول… بعد الفتره الفصلت فيها وزعلت فيها 
-              وإنتي مصره إن السبب الليف
+            <h1 class="title">رسالة ولعلها الاخيرة</h1>
+            <p class="subtitle">
+                عارفه إني مش زي الأول… بعد الفتره الفصلت فيها وزعلت فيها 
+                وإنتي مصره إن السبب الليف
             </p>
         </header>
         
-        <!-- جسيمات خاصة للقصيدة -->
-        <div class="poem-particles" id="poemParticles"></div>
-        
         <section class="poem-section">
-            <h2 class="section-title">اقرئي ولا تحزني </h2>
+            <h2 class="section-title">اقرئي ولا تحزني</h2>
             <div class="poem-container">
-                <div class="verse">ظننتِ بي السوءَ والقلبُ صادقُ    <br>فجرحتِ ودّي وكان ودادُكِ واثقُ        </div>
-                
+                <div class="verse">ظننتِ بي السوءَ والقلبُ صادقُ<br>فجرحتِ ودّي وكان ودادُكِ واثقُ</div>
                 <div class="verse">لَمْ أُحَاوِلْ إصْلَاحَ سُوءِ فَهْمٍ لِأَحَدٍ<br>فِي حَيَاتِي قَطُّ وَلا رَاعَيْتُ ظُنُونَا</div>
-                
-                <div class="verse">لَكِنَّكَ وَحْدَكَ الَّذِي أَهْتَمُّ لِغَضَبِهِ  <br>وَأَخَافُ أَنْ تَكُونَ عَلَيَّ غَضِبْتَنَا</div>
-                
-                <div class="verse">حَاوَلْتُ أُصَالِحُكُمْ وَقَدْ أَسَأْتُ
-وَدَعَوْتُكُمْ لِصَفْوِ الْقُلُوبِ وَرَجَعْتُ
-
-<br>
- لَكِنَّكُمْ أَبَيْتُمْ إِلاَّ تَصَمُّمًا
-وَعَلَى الطُّغْيَانِ إصْرَارَكُمْ قَدْ وَقَفْتُ
-</div>
+                <div class="verse">لَكِنَّكَ وَحْدَكَ الَّذِي أَهْتَمُّ لِغَضَبِهِ<br>وَأَخَافُ أَنْ تَكُونَ عَلَيَّ غَضِبْتَنَا</div>
+                <div class="verse">
+                    حَاوَلْتُ أُصَالِحُكُمْ وَقَدْ أَسَأْتُ<br>
+                    وَدَعَوْتُكُمْ لِصَفْوِ الْقُلُوبِ وَرَجَعْتُ<br><br>
+                    لَكِنَّكُمْ أَبَيْتُمْ إِلاَّ تَصَمُّمًا<br>
+                    وَعَلَى الطُّغْيَانِ إصْرَارَكُمْ قَدْ وَقَفْتُ
+                </div>
             </div>
         </section>
         
         <section class="message-section">
-            <h2 class="section-title">رسالة </h2>
+            <h2 class="section-title">رسالة</h2>
             <p class="message">
                 خلي بالك من روما دي رسالة الحلم روما مش سهله بتاعت حوارات ووهم وراضي امك اهم من اي حاجه حتي لو كان فعلها ايه امك برضوا ملكيش غيرها 
-                وشغلي عقلك عن قلبك وشكك سلام 
-                🫶
+                وشغلي عقلك عن قلبك وشكك سلام 🫶
             </p>
-            <p class="signature">من الشخص الذي يندم على بعده عنك
-              <p class="signature">إلى حين لقاءٍ أفضل.
-              علي دروبنا تجمعنا يوم بلا وجع ولا ظنون
-              </p>
-            </p>
+            <p class="signature">من الشخص الذي  ندم من الاقتراب منك كثيرا </p>
+            <p class="signature">   بلا لقاءٍ أفضل</p>
+            <p class="signature">  ليس لنا دروب تجمعنا  </p>
         </section>
         
         <div class="music-controls">
             <button class="control-btn" id="playBtn">
                 <i class="fas fa-play"></i>
-                <span>تشغيل الموسيقى</span>
+                تشغيل الموسيقى
             </button>
             <button class="control-btn" id="pauseBtn">
                 <i class="fas fa-pause"></i>
-                <span>إيقاف الموسيقى</span>
+                إيقاف الموسيقى
             </button>
             <button class="control-btn" id="volumeUpBtn">
                 <i class="fas fa-volume-up"></i>
-                <span>رفع الصوت</span>
+                رفع الصوت
             </button>
         </div>
     </div>
     
     <footer class="footer">
-        <p>صنع لطيبه القلبب  والروح ❤ رحمه</p>
+        <p>صنع لطيبه القلب والروح ❤ رحمه</p>
     </footer>
 
-    <!-- عنصر الصوت -->
     <audio id="backgroundMusic" loop>
         <source src="Tiktok_1758678349758.mp3" type="audio/mpeg">
         المتصفح الخاص بك لا يدعم عنصر الصوت.
@@ -570,56 +466,31 @@
             const audio = document.getElementById('backgroundMusic');
             const startScreen = document.getElementById('startScreen');
             const startBtn = document.getElementById('startBtn');
+            const newPageBtn = document.getElementById('newPageBtn');
             const mainContent = document.getElementById('mainContent');
             const playBtn = document.getElementById('playBtn');
             const pauseBtn = document.getElementById('pauseBtn');
             const volumeUpBtn = document.getElementById('volumeUpBtn');
             const particlesContainer = document.getElementById('particles');
-            const poemParticlesContainer = document.getElementById('poemParticles');
             
-            // ضبط مستوى الصوت الابتدائي
-            audio.volume = 0.7;
+            audio.volume = 0.5;
             
-            // إنشاء جسيمات عشوائية
             function createParticles() {
-                for (let i = 0; i < 50; i++) {
+                for (let i = 0; i < 40; i++) {
                     const particle = document.createElement('div');
                     particle.classList.add('particle');
-                    
-                    // وضع عشوائي
                     particle.style.left = Math.random() * 100 + 'vw';
                     particle.style.animationDelay = Math.random() * 15 + 's';
                     particle.style.animationDuration = (15 + Math.random() * 10) + 's';
-                    
                     particlesContainer.appendChild(particle);
                 }
             }
             
-            // إنشاء جسيمات خاصة للقصيدة
-            function createPoemParticles() {
-                for (let i = 0; i < 30; i++) {
-                    const particle = document.createElement('div');
-                    particle.classList.add('poem-particle');
-                    
-                    // وضع عشوائي داخل قسم القصيدة
-                    particle.style.left = Math.random() * 100 + 'vw';
-                    particle.style.animationDelay = Math.random() * 10 + 's';
-                    particle.style.animationDuration = (10 + Math.random() * 5) + 's';
-                    
-                    poemParticlesContainer.appendChild(particle);
-                }
-            }
-            
-            // بدء التجربة عند الضغط على زر البداية
             startBtn.addEventListener('click', function() {
-                // تشغيل الموسيقى
-                audio.play().then(() => {
-                    console.log('الموسيقى بدأت التشغيل');
-                }).catch(error => {
+                audio.play().catch(error => {
                     console.log('خطأ في تشغيل الموسيقى:', error);
                 });
                 
-                // إخفاء شاشة البداية وإظهار المحتوى الرئيسي
                 startScreen.style.opacity = '0';
                 setTimeout(() => {
                     startScreen.style.display = 'none';
@@ -627,7 +498,11 @@
                 }, 1000);
             });
             
-            // التحكم بالموسيقى
+            newPageBtn.addEventListener('click', function() {
+                // فتح صفحة HTML منفصلة
+                window.open('newpage.html', '_blank', 'width=800,height=600');
+            });
+            
             playBtn.addEventListener('click', function() {
                 audio.play();
             });
@@ -640,30 +515,9 @@
                 if (audio.volume < 1) {
                     audio.volume += 0.1;
                 }
-                if (audio.volume > 0.9) {
-                    audio.volume = 1;
-                }
             });
             
-            // إنشاء الجسيمات
             createParticles();
-            createPoemParticles();
-            
-            // تأثيرات إضافية عند التمرير
-            const verses = document.querySelectorAll('.verse');
-            
-            function checkScroll() {
-                verses.forEach(verse => {
-                    const verseTop = verse.getBoundingClientRect().top;
-                    const windowHeight = window.innerHeight;
-                    
-                    if (verseTop < windowHeight * 0.75) {
-                        verse.style.animationPlayState = 'running';
-                    }
-                });
-            }
-            
-            window.addEventListener('scroll', checkScroll);
         });
     </script>
 </body>
