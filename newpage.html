@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رسالة خاصة</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'El Messiri', sans-serif;
+            background: linear-gradient(45deg, #0a0a0a, #1a1a2e, #16213e);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .title {
+            font-size: 3rem;
+            background: linear-gradient(45deg, #ff6b6b, #6e78ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 30px;
+        }
+        
+        .message {
+            font-size: 1.6rem;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+        
+        .quote {
+            font-size: 1.4rem;
+            font-style: italic;
+            color: #fb9a62;
+            margin: 30px 0;
+            padding: 20px;
+            border-right: 3px solid #827f7d;
+            background: rgba(255, 163, 108, 0.1);
+        }
+        
+        .back-btn {
+            background: linear-gradient(45deg, #f12626, #6e78ff);
+            border: none;
+            border-radius: 50px;
+            padding: 15px 40px;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin-top: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .title { font-size: 2.2rem; }
+            .message { font-size: 1.3rem; }
+            .quote { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title"></h1> رحيل دائم</h1>
+        <p class="message">
+    لا عتاب بعد الآن
+    <br>
+    فالظن السيئ قال كل شيء.
+        </p>
+        <div class="quote">
+            شكرًا
+        <br>
+        علّمتني ألا أبرر لمن لا يريد أن يفهم،
+        <br>
+        ولا أتمسك بمن ظنّ بي السوء
+        <br>
+        ولا ان ابكي علي من رحل بلا وداع بل رحل بتبليكي ........
+        <br>
+        فالصمت ابلغ من الف تبرير 
+        <br>
+        رحيل بصمت 😔 اكرم 
+
+        </div>
+        <p class="message">
+            كم مره ظنيتي فيا وحش وكم مره سو فهم  والحمد الله انت البتقولي سوء فهم مني 
+            <br>
+            حاجه اخيره  اوعدك انك مش هتشوفيني حتي ولو صدفه 
+        </p>
+        <p class="message" style="color: #6e78ff; font-weight: bold;">
+           رحيل بلا نية لقاء 
+           <br>
+      حرفيا شكرا انك خلتيني مش عارف اتكلم وان افضل الصمت عن العتاب 
+        </p>
+        <button class="back-btn" onclick="window.close()">
+            <i class="fas fa-arrow-left"></i>
+            العودة
+        </button>
+    </div>
+    
+    <audio id="backgroundMusic" loop>
+        <source src="Tiktok_1760162472854.mp3" type="audio/mpeg">
+        المتصفح الخاص بك لا يدعم عنصر الصوت.
+    </audio>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const audio = document.getElementById('backgroundMusic');
+            audio.volume = 0.5;
+            audio.play().catch(e => {
+                console.log('خطأ في تشغيل الموسيقى:', e);
+            });
+        });
+    </script>
+</body>
+</html>
